@@ -138,21 +138,20 @@ const links = [
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
+    <main className="text-gray-900 p-24 font-serif bg-gray-50">
+      <h1 className="text-4xl font-extrabold mb-16 max-w-2xl shadow-lg p-5 rounded-lg bg-white">
         Congratulations
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
+        <span className="text-purple-600">— you just made a Gatsby site! 🎉🎉🎉</span>
       </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
+      <p className="mb-12 shadow-md p-5 rounded bg-white">
+        Edit <code className="text-brown-600 p-1 bg-yellow-100 text-lg rounded-md">src/pages/index.tsx</code> to see this page update in real-time. 😎
       </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
+      <ul className="list-none mb-24">
+        {docLinks.map((doc) => (
+          <li key={doc.url} className="inline-block mb-6 mr-3 shadow-sm p-2 rounded bg-white">
             <a
-              style={linkStyle}
+              className="text-purple-800 font-bold text-lg hover:text-purple-600"
               href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
             >
               {doc.text}
@@ -160,22 +159,25 @@ const IndexPage: React.FC<PageProps> = () => {
           </li>
         ))}
       </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
+      <ul className="mb-24 pl-0">
+        {links.map((link) => (
+          <li key={link.url} className="font-light text-2xl max-w-xl mb-7.5 text-gray-900 shadow p-5 m-12 rounded-lg bg-white">
             <span>
               <a
-                style={linkStyle}
+                className="text-indigo-700 font-bold text-xl hover:text-indigo-500"
                 href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
               >
                 {link.text}
               </a>
               {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
+                <span
+                  className="bg-green-700 text-white border-green-700 text-xs font-bold uppercase tracking-wide rounded px-1.5 py-0.5 inline-block relative top-[-0.125rem] ml-2.5 leading-none"
+                  aria-label="New Badge"
+                >
                   NEW!
                 </span>
               )}
-              <p style={descriptionStyle}>{link.description}</p>
+              <p className="text-gray-900 text-sm mt-2.5 mb-0 leading-relaxed">{link.description}</p>
             </span>
           </li>
         ))}
